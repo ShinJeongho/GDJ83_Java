@@ -18,19 +18,17 @@ public class Study8 {
 		for(int e=0; e<3;e++) {  
 				
 		int a = sc.nextInt();  //입력    
-		
+		int count=10;
+		String sound="탕탕탕";
 		if(a==1) {
-		
-			for(int i=0;i<30;i++) {
-				
+		 count=30;
+		 sound="탕";
 			
-				System.out.println(i+1+"번 탕");
-			} //안쪽 for 끝
-		}else {
-			for(int i=0;i<10;i++) {
-				System.out.println(i+1+"번 탕탕탕");
-			}//안쪽 for 끝
 		}
+		for(int b=0;b<count;b++) {
+			System.out.println(sound);
+		}
+		//for문 한번쓰기
 	}		
 		
 		
