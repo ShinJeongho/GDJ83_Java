@@ -11,7 +11,7 @@ public class Study4 {
 		
 		int num = sc.nextInt();
 		
-		int result=(num/2);
+		int result=num/4*10+num%4;
 		
 		System.out.println(num);
 		System.out.println(result);
