@@ -4,6 +4,19 @@ import java.util.Scanner;
 
 public class StudentService {
 
+	public Student findByNum(Student[] students) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("번호 입력");
+		int n = sc.nextInt();
+
+		for (int i = 0; i < students.length; i++) {
+			if (n == students[i].num) {
+				return students[i];
+			}
+		}
+		return null;
+	}
+
 	public Student[] makestudent() {
 		Scanner sc = new Scanner(System.in);
 
@@ -36,3 +49,4 @@ public class StudentService {
 	};
 
 }
+//findByNum 메서드 만들고 찾으려고하는 학생의 번호를 입력받아서  일치하는 학생의 객체를 리턴해서 view에서출력하게
