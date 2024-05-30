@@ -27,16 +27,16 @@ public class StudentController {
 					studentView.view(students);
 
 				} else {
-					studentView.view3("학생 정보를 먼저 입력");
+					studentView.view("학생 정보를 먼저 입력");
 				}
 			} else if (select == 3) {
 				System.out.println("학생검색 코드 작성해");
 				Student student = sv.findByNum(students);
 				if (student != null) {
-					studentView.view2(student);
+					studentView.view(student);
 
 				} else {
-					studentView.view3("검색 결과가 없습니다");
+					studentView.view("검색 결과가 없습니다");
 				}
 			} else if (select == 4) {
 				System.out.println("종료");

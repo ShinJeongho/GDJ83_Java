@@ -2,7 +2,7 @@ package com.winer.study3.student;
 
 public class StudentView {
 
-	public void view3(String str) {
+	public void view(String str) {
 		System.out.println(str);
 	}
 
@@ -15,7 +15,7 @@ public class StudentView {
 
 	}
 
-	public void view2(Student student) {
+	public void view(Student student) {
 		System.out.println(student.num);
 		System.out.println(student.name);
 	}
