@@ -1,13 +1,21 @@
 package com.winer.s1;
 
-import com.winer.s2.MiddleStudent;
-
 public class S1Main {
 
 	public static void main(String[] args) {
-		MiddleStudent ms = new MiddleStudent();
 
-		ms.info();
+		Object obj = new Object();
+		Test test = new Test();
+		String str = test.toString();
+		System.out.println(str);
+		System.out.println(test);
+
+		System.out.println(String.CASE_INSENSITIVE_ORDER);
+
+		String n = new String("winter");
+		String name = "winter";
+		System.out.println(name.toString());
+		System.out.println(name);
 
 	}
 
