@@ -38,15 +38,40 @@ public class Wrapper3 {
 		// 같으면 제대로된 번호 틀리면 다른번호
 		// 11로 뺀 결과값이 2자리수라면 뺀 결과값을 10으로 나눈 나머지를 검증용 숫자와 같은지 비교
 
+		int c = 2;
+		int sum = 0;
+		for (int i = 0; i < jumin.length() - 1; i++) {
+			char n1 = jumin.charAt(i);
+			if (i == 6) {
+				continue;
+			}
+			String n2 = String.valueOf(n1);
+			int num1 = Integer.parseInt(n2);
+			sum = sum + num1 * c;
+			c++;
+			if (c > 9) {
+				c = 2;
+			}
+		}
+		sum = sum % 11;
+		sum = 11 - sum;
+		if (sum > 9) {
+			sum = sum % 10;
+		}
+		int a = Integer.parseInt(String.valueOf(jumin.charAt(jumin.length() - 1)));
+		if (sum == a) {
+			System.out.println("OK");
+		} else {
+			System.out.println("재발급");
+		}
+
+		if (sum == jumin.charAt(jumin.length() - 1))
+			;
+
 		char n1 = jumin.charAt(0);// 99 char타입
 		String n2 = String.valueOf(n1); // "99" String타입
 		int num1 = Integer.parseInt(n2); // 숫자로 변환 99 숫자로 변환
 		System.out.println(num1 * 2); // 숫자 188 프린트
-
-		int sum = 0;
-		sum += num1 * 2;
-		System.out.println(sum);
-
 	}
 
 }
