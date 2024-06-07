@@ -1,6 +1,8 @@
 package com.winer.s1.lang.wrapper.ex;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class WeatherService {
 
@@ -24,9 +26,37 @@ public class WeatherService {
 		// init를 main에서 호출했을때 sb에있는 것을 문자열 변수에 담아서 출력
 		info = info.replace(",", "-"); // ,를 -변경
 
-		WeatherDTO[] dtos = this.getWeathers(info); // 문자열정보를 dto배열로 반환
+		WeatherDTO[] dtos = this.useTokenizer(info); // this.getWeathers(info); // 문자열정보를 dto배열로 반환
 
 		return dtos;
+	}
+
+	private WeatherDTO[] useTokenizer(String info) {
+
+		WeatherDTO[] weatherDto2 = new WeatherDTO[4];
+		ArrayList<WeatherDTO> arrays = new ArrayList<WeatherDTO>();
+		StringTokenizer st = new StringTokenizer(info, "-");
+		int sw = 0;
+		while (st.hasMoreTokens()) {
+			WeatherDTO weatherDTO = new WeatherDTO();
+			String name = st.nextToken(); // 서울
+			Double se = Double.parseDouble(st.nextToken());// 29.3
+			String name2 = st.nextToken();
+			Integer se2 = Integer.parseInt(st.nextToken());
+
+			weatherDTO.setCity(name);
+			weatherDTO.setGion(se);
+			weatherDTO.setStatus(name2);
+			weatherDTO.setHumidity(se2);
+			arrays.add(weatherDTO);
+
+			weatherDto2[sw] = weatherDTO;
+			sw++;
+
+		}
+
+		return weatherDto2;
+
 	}
 
 	private WeatherDTO[] getWeathers(String info) {
