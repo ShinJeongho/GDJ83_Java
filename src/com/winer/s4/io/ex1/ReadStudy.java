@@ -12,12 +12,12 @@ public class ReadStudy {
 		// info.txt파일 읽어오기
 		// 1.항목별로 파싱 후 출력 예)라면,3500,500 제육,9000,850
 		// 2.DTO를 메뉴수대로 만든다음에 리턴
-		List<MenuDTO> menuList = new ArrayList<MenuDTO>();
+		List<MenuDTO> menuList = new ArrayList<MenuDTO>(); // MenuDTO 객체생성
 
-		File file = new File("C:\\study", "info.txt");
+		File file = new File("C:\\study", "info.txt"); // File 객체생성
 
-		FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr);
+		FileReader fr = new FileReader(file); // 문자로 읽기위해 FileReader 객체생성
+		BufferedReader br = new BufferedReader(fr); // 문자열로 읽기위해 BufferdeReader 객체생성
 
 		while (true) {
 			String s = br.readLine();
